@@ -19,6 +19,8 @@ def has_small_gaps(line):
 
 
 def is_safe(line):
+    if is_sorted(line) and has_small_gaps(line):
+        return True
     for i in range(len(line)):
         tampered = copy.deepcopy(line)
         del tampered[i]
